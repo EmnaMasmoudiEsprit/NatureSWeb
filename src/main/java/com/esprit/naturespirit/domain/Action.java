@@ -1,5 +1,6 @@
 package com.esprit.naturespirit.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -10,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Action {
+public class Action implements Serializable{
 
 	private int id;
 	private String desciption;
