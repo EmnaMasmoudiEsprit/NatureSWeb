@@ -1,5 +1,6 @@
 package com.esprit.naturespirit.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -11,7 +12,7 @@ import javax.persistence.OneToMany;
 
 
 @Entity
-public class Alertcategory {
+public class Alertcategory implements Serializable {
 	private int id;
 	private String name;
 	private List<Alert> alerts;
@@ -46,6 +47,7 @@ public class Alertcategory {
 	
 	
   
+	//@OneToMany(mappedBy="categ")
 	@OneToMany(mappedBy="categ")
 	public List<Alert> getAlerts() {
 		return alerts;

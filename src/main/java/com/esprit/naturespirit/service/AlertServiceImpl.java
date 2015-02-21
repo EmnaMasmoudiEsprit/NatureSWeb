@@ -1,4 +1,4 @@
-package com.esprit.ntureSJPA.service;
+package com.esprit.naturespirit.service;
 
 import java.util.List;
 
@@ -8,10 +8,11 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import com.esprit.naturespirit.domain.Alert;
+
 @Stateless
 public class AlertServiceImpl implements AlertService {
-	
-	@PersistenceContext(unitName="natureSJPA")
+
+	@PersistenceContext(unitName = "natureSJPA")
 	EntityManager entityManager;
 
 	@Override
@@ -23,28 +24,40 @@ public class AlertServiceImpl implements AlertService {
 	public void delete(Alert alert) {
 
 		entityManager.remove(entityManager.merge(alert));
-		
+
 	}
 
 	@Override
 	public void update(Alert alert) {
 		entityManager.merge(alert);
-		
+
 	}
 
 	@Override
-	public Alert findByLogin(String login){
-		
-		return entityManager.find(Alert.class, login);
-		
+	public List<Alert> findByName(String name) {
+		List<Alert> alerts = null;
+		try {
+			Query query = entityManager
+					.createQuery("SELECT u FROM Alert u WHERE u.name=:alert1");
+			query.setParameter("alert1", name);
+			alerts = query.getResultList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return alerts;
 	}
-	
+
 	@Override
 	public List<Alert> findAll() {
-	
-		Query query=entityManager.createQuery("SELECT u FROM Alert u");
-		
+
+		Query query = entityManager.createQuery("SELECT u FROM Alert u");
+
 		return query.getResultList();
 	}
 
+	@Override
+	public Alert findById(int id) {
+
+		return entityManager.find(Alert.class, id);
+	}
 }

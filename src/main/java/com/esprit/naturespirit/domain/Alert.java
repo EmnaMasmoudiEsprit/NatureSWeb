@@ -1,6 +1,9 @@
 package com.esprit.naturespirit.domain;
 
 
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,8 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import java.lang.String;
+import java.lang.Integer;
 @Entity
-public class Alert {
+public class Alert   implements Serializable{
 
 	private int id;
 	private String desciption;
@@ -68,7 +73,8 @@ public class Alert {
 		this.state = state;
 	}
 	
-	@ManyToOne
+	//@ManyToOne
+	@ManyToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE})
 	public Alertcategory getCateg() {
 		return categ;
 	}
