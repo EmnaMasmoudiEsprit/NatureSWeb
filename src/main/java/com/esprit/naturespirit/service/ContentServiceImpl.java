@@ -53,5 +53,11 @@ public class ContentServiceImpl implements ContentService{
 		Query query = entityManager.createQuery("select u from OfficialContent u");
 		return query.getResultList();//langage jpql //jpa norme
 	}
+	
+	@Override
+	public List<OfficialContent> findByType(String type) {
+		Query query = entityManager.createQuery("select u from OfficialContent u WHERE u.type like '%"+type+"%'");
+		return query.getResultList();//langage jpql //jpa norme
+	}
 
 }
