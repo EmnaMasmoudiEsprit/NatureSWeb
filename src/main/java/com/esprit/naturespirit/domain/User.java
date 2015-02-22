@@ -8,8 +8,6 @@ import javax.persistence.*;
 
 
 
-
-
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
 public class User implements Serializable {
@@ -25,6 +23,7 @@ public class User implements Serializable {
 	private String email;
 	private List<Interaction> decisions;
 	private List<Invitation> invitaions;
+	private List<Donation> donations;
 	
 	
 	private static final long serialVersionUID = 1L;
