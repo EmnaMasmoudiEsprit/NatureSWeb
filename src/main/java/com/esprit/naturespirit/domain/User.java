@@ -24,7 +24,7 @@ public class User implements Serializable {
 	private List<Interaction> decisions;
 	private List<Invitation> invitaions;
 	private List<Donation> donations;
-	
+	private Newsletter newsletter;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -103,6 +103,14 @@ public class User implements Serializable {
 	}
 	public void setInvitaions(List<Invitation> invitaions) {
 		this.invitaions = invitaions;
+	}
+	
+	@ManyToOne
+	public Newsletter getNewsletter() {
+		return newsletter;
+	}
+	public void setNewsletter(Newsletter newsletter) {
+		this.newsletter = newsletter;
 	}
    
 }

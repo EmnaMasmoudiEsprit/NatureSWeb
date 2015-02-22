@@ -15,7 +15,7 @@ public class Newsletter implements Serializable {
 
 	private int id;
 	private String content;
-	private Set<SimpleUser> simpleUser;
+	private Set<User> User;
 	private static final long serialVersionUID = 1L;
 
 	public Newsletter() {
@@ -36,13 +36,17 @@ public class Newsletter implements Serializable {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
+	
 	@OneToMany(mappedBy="newsletter")
-	public Set<SimpleUser> getSimpleUser() {
-		return simpleUser;
+	public Set<User> getUser() {
+		return User;
 	}
-	public void setSimpleUser(Set<SimpleUser> simpleUser) {
-		this.simpleUser = simpleUser;
+	public void setUser(Set<User> user) {
+		User = user;
 	}
+	
+	
 	
 	
 }

@@ -17,7 +17,7 @@ public class SimpleUser extends User implements Serializable {
 
 	
 	private Boolean state_journalist;
-	private Newsletter newsletter;
+	
 	private File  cv;
 	private Blog blog;
 	private List<Article> articles;
@@ -36,13 +36,7 @@ public class SimpleUser extends User implements Serializable {
 	public void setState_journalist(Boolean state_journalist) {
 		this.state_journalist = state_journalist;
 	}
-	@ManyToOne
-	public Newsletter getNewsletter() {
-		return newsletter;
-	}
-	public void setNewsletter(Newsletter newsletter) {
-		this.newsletter = newsletter;
-	}
+	
 	
 	@OneToMany(mappedBy="simple")
 	public List<Article> getArticles() {
