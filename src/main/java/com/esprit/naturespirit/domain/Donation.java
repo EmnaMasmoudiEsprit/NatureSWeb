@@ -26,6 +26,7 @@ public class Donation implements Serializable {
 		return this.id;
 	}
 //ggg
+	///jjjj
 	public void setId(int id) {
 		this.id = id;
 	}   
