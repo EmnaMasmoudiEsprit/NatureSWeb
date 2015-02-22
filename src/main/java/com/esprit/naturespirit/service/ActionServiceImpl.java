@@ -61,4 +61,10 @@ public class ActionServiceImpl implements ActionService {
 		return entityManager.find(Action.class, id);
 	}
 
+	@Override
+	public List<Action> findByPlace(String place) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

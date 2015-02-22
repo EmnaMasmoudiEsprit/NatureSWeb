@@ -19,6 +19,7 @@ public interface ActionService {
 	List<Action> findByName(String name);
 
 	public Action findById(int id);
-	
+
+	List<Action> findByPlace(String place);
 
 }

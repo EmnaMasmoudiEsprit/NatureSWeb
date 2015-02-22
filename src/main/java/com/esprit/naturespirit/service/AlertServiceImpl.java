@@ -60,4 +60,17 @@ public class AlertServiceImpl implements AlertService {
 
 		return entityManager.find(Alert.class, id);
 	}
+	@Override
+	public List<Alert> findByPlace(String place) {
+		List<Alert> alerts1 = null;
+		try {
+			Query query1 = entityManager
+					.createQuery("SELECT u FROM Alert u WHERE u.place=:Tunisia");
+			query1.setParameter("Tunisia", place);
+			alerts1 = query1.getResultList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return alerts1;
+	}
 }
