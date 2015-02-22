@@ -26,7 +26,7 @@ public class SimpleUserServiceImpl implements SimpleUserService {
 		entityManager.remove(entityManager.merge(spUser));
 		
 	}
-
+//
 	@Override
 	public void update(SimpleUser spUser) {
 		entityManager.merge(spUser);

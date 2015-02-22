@@ -28,5 +28,5 @@ public interface newsletterService {
 	List<Article>findAllArticle();
 	List<Donation>findAllDonation();
 	List<User> findAllUser();
-	
+	//
 }
