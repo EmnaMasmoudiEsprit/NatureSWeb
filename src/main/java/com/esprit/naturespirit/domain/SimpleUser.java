@@ -20,7 +20,6 @@ public class SimpleUser extends User implements Serializable {
 	private Newsletter newsletter;
 	private File  cv;
 	private Blog blog;
-	private List<Donation> donations;
 	private List<Article> articles;
 	
 	
@@ -63,13 +62,6 @@ public class SimpleUser extends User implements Serializable {
 		this.blog = blog;
 	}
 	
-	@OneToMany(mappedBy="simpleUser")
-	public List<Donation> getDonations() {
-		return donations;
-	}
-	public void setDonations(List<Donation> donations) {
-		this.donations = donations;
-	}
 	public File getCv() {
 		return cv;
 	}

@@ -1,6 +1,7 @@
 package com.esprit.naturespirit.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -13,8 +14,9 @@ public class Donation implements Serializable {
 
 	private int id;
 	private float value;
-	private SimpleUser simpleUser;
+	private User User;
 	private DonationCategory donationCategory;
+	private Date date;
 	private static final long serialVersionUID = 1L;
 
 	public Donation() {
@@ -25,8 +27,7 @@ public class Donation implements Serializable {
 	public int getId() {
 		return this.id;
 	}
-//ggg
-	///jjjj
+
 	public void setId(int id) {
 		this.id = id;
 	}   
@@ -39,22 +40,30 @@ public class Donation implements Serializable {
 		this.value = value;
 	}
 
-	@ManyToOne
-	public SimpleUser getSimpleUser() {
-		return simpleUser;
+	@ManyToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE})
+	public User getUser() {
+		return User;
 	}
 
-	public void setSimpleUser(SimpleUser simpleUser) {
-		this.simpleUser = simpleUser;
+	public void setUser(User User) {
+		this.User = User;
 	}
 
-	@ManyToOne
+	@ManyToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE})
 	public DonationCategory getDonationCategory() {
 		return donationCategory;
 	}
 
 	public void setDonationCategory(DonationCategory donationCategory) {
 		this.donationCategory = donationCategory;
+	}
+	@Temporal(TemporalType.DATE)
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 }
