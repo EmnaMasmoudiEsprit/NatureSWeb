@@ -21,4 +21,6 @@ public interface AlertService {
 
 	public Alert findById(int id);
 
+
+	List<Alert> findByPlace(String place);
 }

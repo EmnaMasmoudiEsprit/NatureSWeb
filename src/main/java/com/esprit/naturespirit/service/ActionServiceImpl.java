@@ -61,4 +61,19 @@ public class ActionServiceImpl implements ActionService {
 		return entityManager.find(Action.class, id);
 	}
 
-}
+	@Override
+	public List<Action> findByPlace(String place) {
+		List<Action> actions=null;
+		try {
+			Query query = entityManager.createQuery("SELECT u FROM Action u WHERE u.place=:action");
+			query.setParameter("action", place);
+			 actions=query.getResultList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return actions;
+		}
+	}
+
+

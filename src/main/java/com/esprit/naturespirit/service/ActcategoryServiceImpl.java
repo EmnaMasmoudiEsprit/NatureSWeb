@@ -57,5 +57,6 @@ public class ActcategoryServiceImpl implements ActcategoryService {
 
 		return entityManager.find(Actcategory.class, id);
 	}
+	
 
 }
