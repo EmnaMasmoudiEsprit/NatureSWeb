@@ -21,7 +21,7 @@ public class Actcategory implements Serializable{
 	public Actcategory() {
 		// TODO Auto-generated constructor stub
 	}
-
+//////////////////////////
 	public Actcategory(int id, String name) {
 
 		this.id = id;
