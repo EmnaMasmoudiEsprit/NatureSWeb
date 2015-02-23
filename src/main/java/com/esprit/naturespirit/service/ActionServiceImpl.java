@@ -63,8 +63,17 @@ public class ActionServiceImpl implements ActionService {
 
 	@Override
 	public List<Action> findByPlace(String place) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Action> actions=null;
+		try {
+			Query query = entityManager.createQuery("SELECT u FROM Action u WHERE u.place=:action");
+			query.setParameter("action", place);
+			 actions=query.getResultList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return actions;
+		}
 	}
 
-}
+
