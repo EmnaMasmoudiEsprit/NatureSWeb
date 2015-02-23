@@ -18,7 +18,7 @@ public class SimpleUser extends User implements Serializable {
 	
 	private Boolean state_journalist;
 	private Newsletter newsletter;
-	private File  cv;
+	private String  cv;
 	private Blog blog;
 	private List<Article> articles;
 	
@@ -61,12 +61,12 @@ public class SimpleUser extends User implements Serializable {
 	public void setBlog(Blog blog) {
 		this.blog = blog;
 	}
-	
-	public File getCv() {
+	public String getCv() {
 		return cv;
 	}
-	public void setCv(File cv) {
+	public void setCv(String cv) {
 		this.cv = cv;
 	}
-   
+	
+	
 }
