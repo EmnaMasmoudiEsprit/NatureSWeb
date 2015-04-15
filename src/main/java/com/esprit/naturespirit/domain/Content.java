@@ -18,8 +18,8 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="OfficialContent")
-public class OfficialContent implements Serializable{
+@Table(name="Content")
+public class Content implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	private int id;
@@ -29,11 +29,11 @@ public class OfficialContent implements Serializable{
 	private Date date;
 	private byte[] blobcontent;
 	private File file;
-	private Admin admin;
+	private User user;
 	
 	
 	
-	public OfficialContent() {
+	public Content() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -54,11 +54,11 @@ public class OfficialContent implements Serializable{
 	
 	
 	@ManyToOne
-	public Admin getAdmin() {
-		return admin;
+	public User getUser() {
+		return user;
 	}
-	public void setAdmin(Admin admin) {
-		this.admin = admin;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	public String getName() {
 		return name;

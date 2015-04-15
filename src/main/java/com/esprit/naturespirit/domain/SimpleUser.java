@@ -18,7 +18,7 @@ public class SimpleUser extends User implements Serializable {
 	
 	private Boolean state_journalist;
 	private String  cv;
-	private Blog blog;
+
 	
 	private List<Article> articles;
 	private Newsletter newsletter;
@@ -48,20 +48,7 @@ public class SimpleUser extends User implements Serializable {
 	}
 	
 	
-	
-	@OneToOne(mappedBy="simpleUser")
-	public Blog getBlog() {
-		return blog;
-	}
-	public void setBlog(Blog blog) {
-		this.blog = blog;
-	}
-	public String getCv() {
-		return cv;
-	}
-	public void setCv(String cv) {
-		this.cv = cv;
-	}
+
 	
 	
 }

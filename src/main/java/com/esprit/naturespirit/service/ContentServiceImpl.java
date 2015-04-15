@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.EntityManager;
 
-import com.esprit.naturespirit.domain.OfficialContent;
+import com.esprit.naturespirit.domain.Content;
 
 
 @LocalBean
@@ -22,7 +22,7 @@ public class ContentServiceImpl implements ContentService{
 	
 	
 	@Override
-	public void add(OfficialContent offcontent ) {
+	public void add(Content offcontent ) {
 		entityManager.persist(offcontent);//ajouter une ligne
 		
 		
@@ -31,33 +31,33 @@ public class ContentServiceImpl implements ContentService{
 	
 
 	@Override
-	public void update(OfficialContent offcontent) {
+	public void update(Content offcontent) {
 		entityManager.merge(offcontent);
 		
 	}
 	
 	@Override
-	public OfficialContent  findById(int id){
+	public Content  findById(int id){
 		
 		
-		return entityManager.find(OfficialContent.class, id);
+		return entityManager.find(Content.class, id);
 	}
 
 	@Override
-    public void delete(OfficialContent offcontent){
+    public void delete(Content offcontent){
 		
 		entityManager.remove(entityManager.merge(offcontent));
 	}
 
 
 	@Override
-	public List<OfficialContent> findAll() {
+	public List<Content> findAll() {
 		Query query = entityManager.createQuery("select u from OfficialContent u");
 		return query.getResultList();//langage jpql //jpa norme
 	}
 	
 	@Override
-	public List<OfficialContent> findByType(String type) {
+	public List<Content> findByType(String type) {
 		Query query = entityManager.createQuery("select u from OfficialContent u WHERE u.type like '%"+type+"%'");
 		return query.getResultList();//langage jpql //jpa norme
 	}

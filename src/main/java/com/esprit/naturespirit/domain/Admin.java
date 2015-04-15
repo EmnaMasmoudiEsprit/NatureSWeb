@@ -20,7 +20,7 @@ public class Admin extends User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Boolean state_agent;
-	private List<OfficialContent> contents;
+
 	private List<Ship> ships;
 	
 	
@@ -36,13 +36,7 @@ public class Admin extends User implements Serializable {
 	}
 	
 	
-	@OneToMany(mappedBy="admin")
-	public List<OfficialContent> getContents() {
-		return contents;
-	}
-	public void setContents(List<OfficialContent> contents) {
-		this.contents = contents;
-	}
+	
 	
 	@OneToMany(mappedBy="admin")
 	public List<Ship> getShips() {

@@ -25,6 +25,7 @@ public class User implements Serializable {
 	private List<Invitation> invitaions;
 	private List<Donation> donations;
 	private Newsletter newsletter;
+	private List<Content> contents;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -111,6 +112,15 @@ public class User implements Serializable {
 	}
 	public void setNewsletter(Newsletter newsletter) {
 		this.newsletter = newsletter;
+	}
+	
+	
+	@OneToMany(mappedBy="user")
+	public List<Content> getContents() {
+		return contents;
+	}
+	public void setContents(List<Content> contents) {
+		this.contents = contents;
 	}
    
 }

@@ -8,7 +8,6 @@
 	<class>com.esprit.naturespirit.domain.Alert</class>
 	<class>com.esprit.naturespirit.domain.Alertcategory</class>
 	<class>com.esprit.naturespirit.domain.Article</class>
-	<class>com.esprit.naturespirit.domain.Blog</class>
 	<class>com.esprit.naturespirit.domain.Creation</class>
 	<class>com.esprit.naturespirit.domain.Donation</class>
 	<class>com.esprit.naturespirit.domain.DonationCategory</class>
@@ -16,7 +15,7 @@
 	<class>com.esprit.naturespirit.domain.Interaction</class>
 	<class>com.esprit.naturespirit.domain.Invitation</class>
 	<class>com.esprit.naturespirit.domain.Newsletter</class>
-	<class>com.esprit.naturespirit.domain.OfficialContent</class>
+	<class>com.esprit.naturespirit.domain.Content</class>
 	<class>com.esprit.naturespirit.domain.Participation</class>
 	<class>com.esprit.naturespirit.domain.Ship</class>
 	<class>com.esprit.naturespirit.domain.SimpleUser</class>

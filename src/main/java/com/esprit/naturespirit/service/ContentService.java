@@ -4,16 +4,16 @@ import java.util.List;
 
 import javax.ejb.Remote;
 
-import com.esprit.naturespirit.domain.OfficialContent;
+import com.esprit.naturespirit.domain.Content;
 @Remote
 public interface ContentService {
 
 	
 	
-	void add(OfficialContent offcontent);
-	void  delete(OfficialContent offcontent);
-	void  update(OfficialContent offcontent);
-	List<OfficialContent > findAll();
-	OfficialContent findById(int id);
-	List<OfficialContent> findByType(String type);
+	void add(Content offcontent);
+	void  delete(Content offcontent);
+	void  update(Content offcontent);
+	List<Content > findAll();
+	Content findById(int id);
+	List<Content> findByType(String type);
 }

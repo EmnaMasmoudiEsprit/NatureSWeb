@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import com.esprit.naturespirit.domain.Action;
-import com.esprit.naturespirit.domain.OfficialContent;
+import com.esprit.naturespirit.domain.Content;
 
 @LocalBean
 @Stateless
