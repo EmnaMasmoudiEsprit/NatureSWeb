@@ -6,6 +6,8 @@ import java.util.List;
 
 
 
+
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -20,6 +22,7 @@ import com.esprit.naturespirit.domain.Ship;
 import com.esprit.naturespirit.domain.User;
 
 
+@LocalBean
 @Stateless
 public class NewsletterImpl implements newsletterService{
 	

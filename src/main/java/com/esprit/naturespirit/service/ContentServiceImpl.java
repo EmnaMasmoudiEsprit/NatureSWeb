@@ -3,6 +3,7 @@ package com.esprit.naturespirit.service;
 
 import java.util.List;
 
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -11,6 +12,7 @@ import javax.persistence.EntityManager;
 import com.esprit.naturespirit.domain.OfficialContent;
 
 
+@LocalBean
 @Stateless
 public class ContentServiceImpl implements ContentService{
 

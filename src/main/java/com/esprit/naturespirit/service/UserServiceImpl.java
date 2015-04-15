@@ -2,6 +2,7 @@ package com.esprit.naturespirit.service;
 
 import java.util.List;
 
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -9,6 +10,7 @@ import javax.persistence.Query;
 
 import com.esprit.naturespirit.domain.User;
 
+@LocalBean
 @Stateless
 
 public class UserServiceImpl implements UserService{

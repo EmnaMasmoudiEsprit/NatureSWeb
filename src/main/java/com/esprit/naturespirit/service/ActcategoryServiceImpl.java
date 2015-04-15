@@ -2,12 +2,14 @@ package com.esprit.naturespirit.service;
 
 import java.util.List;
 
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import com.esprit.naturespirit.domain.Actcategory;
+@LocalBean
 @Stateless
 public class ActcategoryServiceImpl implements ActcategoryService {
 	@PersistenceContext(unitName = "natureSJPA")
@@ -57,6 +59,8 @@ public class ActcategoryServiceImpl implements ActcategoryService {
 
 		return entityManager.find(Actcategory.class, id);
 	}
+	
+	
 	
 
 }

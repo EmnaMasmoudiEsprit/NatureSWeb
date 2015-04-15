@@ -2,6 +2,7 @@ package com.esprit.naturespirit.service;
 
 import java.util.List;
 
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NamedQueries;
@@ -10,7 +11,9 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import com.esprit.naturespirit.domain.Action;
+import com.esprit.naturespirit.domain.OfficialContent;
 
+@LocalBean
 @Stateless
 public class ActionServiceImpl implements ActionService {
 
@@ -74,6 +77,19 @@ public class ActionServiceImpl implements ActionService {
 		
 		return actions;
 		}
+	
+	@Override
+	public List<Action> findByState(String state) {
+		List<Action> actions=null;
+		try {
+			Query query = entityManager.createQuery("SELECT u FROM Action u WHERE u.state=:action");
+			query.setParameter("action", state);
+			 actions=query.getResultList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return actions;
 	}
 
-
+}

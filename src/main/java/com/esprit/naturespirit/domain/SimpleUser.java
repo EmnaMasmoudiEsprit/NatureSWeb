@@ -17,11 +17,11 @@ public class SimpleUser extends User implements Serializable {
 
 	
 	private Boolean state_journalist;
-
-	private Newsletter newsletter;
 	private String  cv;
 	private Blog blog;
+	
 	private List<Article> articles;
+	private Newsletter newsletter;
 	
 	
 	

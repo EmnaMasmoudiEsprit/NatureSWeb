@@ -2,6 +2,7 @@ package com.esprit.naturespirit.service;
 
 import java.util.List;
 
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -10,7 +11,8 @@ import javax.persistence.Query;
 import com.esprit.naturespirit.domain.Ship;
 
 
-@Stateless (name="ntr_spirit")
+@LocalBean
+@Stateless
 public class RechercheImpl implements RechercheService {
 
 	@PersistenceContext(unitName="natureSJPA")
